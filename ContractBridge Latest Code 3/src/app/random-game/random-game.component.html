@@ -1,0 +1,67 @@
+<div class="randomGameBlock">
+    <button class="closeBtn" (click)="leaveLobby()">
+        <img src="/assets/img/Button_Cross.png" alt="">
+    </button>
+    <div class="innerContent">
+        <h1>Random Game</h1>
+        <p class="subTitle">
+            Please wait while we are searching players
+        </p>
+        <div class="videoBlock">
+            <div class="videos">
+                <div class="content">
+                    
+                    <img src="/assets/img/Group 123.png" alt="">
+
+                    <div class="caption">
+                        <div *ngIf="model.playersInRoom[0]" >{{model.playersInRoom[0].userName}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="videos video-searching">
+                <div class="content">
+                    <div class="loader"><img src="/assets/img/loader.gif" alt=""></div>
+                    <div class="caption">
+                        <img src="/assets/img/Group 123.png" alt="" *ngIf = "this.model.playersInRoom.length>1">
+                        <div *ngIf="model.playersInRoom[1]">{{model.playersInRoom[1].userName}}</div>
+                      <div  *ngIf="! model.playersInRoom[1]">Searching...</div>  
+                    </div>
+                </div>
+            </div>
+            <div class="videos video-searching">
+               <div class="content">
+                <div class="loader"><img src="/assets/img/loader.gif" alt=""></div>
+                    <div class="caption">
+                        <img src="/assets/img/Group 123.png" alt="" *ngIf = "this.model.playersInRoom.length>2"><div *ngIf="model.playersInRoom[2]">{{model.playersInRoom[2].userName}}</div>
+                        <div  *ngIf="! model.playersInRoom[2]">Searching...</div>
+                    </div>
+               </div>
+            </div>
+            <div class="videos video-searching">
+                <div class="content">
+                    <div class="loader"><img src="/assets/img/loader.gif" alt=""></div>
+                    <div class="caption">
+                        <img src="/assets/img/Group 123.png" alt="" *ngIf = "this.model.playersInRoom.length>3"><div *ngIf="model.playersInRoom[3]">{{model.playersInRoom[3].userName}}</div>
+                        <div  *ngIf="! model.playersInRoom[3]">Searching...</div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        
+        <!-- loader final -->
+        <!-- <div class='container'>
+            <div class='loader'>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--text'></div>
+            </div>
+          </div> -->
+          
+
+    </div>
+</div>
+<!-- <app-timer-popup *ngIf="model.showTimerPopup"></app-timer-popup> -->

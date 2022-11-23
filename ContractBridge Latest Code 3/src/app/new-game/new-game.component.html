@@ -1,0 +1,78 @@
+<div class="newGameBlock">
+    <button class="closeBtn" (click)="close()">
+        <img src="/assets/img/Button_Cross.png" alt="">
+    </button>
+    <div class="innerContent">
+        <h1>New Game Created</h1>
+        <p class="subTitle">
+            Please share the Game ID with your friends to invite them to the game
+        </p>
+        <div class="flexbox">
+            <div class="videoBlock">
+                <div class="videos">
+                    <div class="hostTag">
+                        <img src="/assets/img/Host.png" alt="">
+                    </div>
+                    <div class="content">
+                        <img src="/assets/img/Group 123.png" alt="">
+
+                    </div>
+                    <div class="caption" *ngIf="model.playersInRoom[0]" >{{model.playersInRoom[0].userName}}</div>
+
+                </div>
+                <div class="videos">
+                    <div class="content">
+                        <div class="loader"><img src="/assets/img/loader.gif" alt=""  *ngIf = "this.model.playersInRoom.length<2"></div>
+                        <div class="caption" *ngIf="model.playersInRoom[1]" >{{model.playersInRoom[1].userName}}</div>
+
+                        <img src="/assets/img/Group 123.png" alt="" *ngIf = "this.model.playersInRoom.length>1">
+                    </div>
+                </div>
+                <div class="videos video-waiting">
+                    <div class="content">
+                        <div class="loader"><img src="/assets/img/loader.gif" alt=""  *ngIf = "this.model.playersInRoom.length<3"></div>
+                        <img src="/assets/img/Group 123.png" alt="" *ngIf = "this.model.playersInRoom.length>2">
+                        <div class="caption" *ngIf="model.playersInRoom[2]" >{{model.playersInRoom[2].userName}}</div>
+                        <div class="caption" *ngIf = "this.model.playersInRoom.length<3">
+                            Waiting...
+                        </div>
+                    </div>
+                </div>
+                <div class="videos video-waiting">
+                    <div class="content">
+                        <div class="loader"><img src="/assets/img/loader.gif" alt=""  *ngIf = "this.model.playersInRoom.length<4"></div>
+                        <img src="/assets/img/Group 123.png" alt="" *ngIf = "this.model.playersInRoom.length>3">
+                        <div class="caption" *ngIf="model.playersInRoom[3]" >{{model.playersInRoom[3].userName}}</div>
+
+                        <div class="caption" *ngIf = "this.model.playersInRoom.length<4">
+                            Waiting...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class='container'>
+                <div class='loader'>
+                  <div class='loader--dot'></div>
+                  <div class='loader--dot'></div>
+                  <div class='loader--dot'></div>
+                  <div class='loader--dot'></div>
+                  <div class='loader--dot'></div>
+                  <div class='loader--dot'></div>
+                  <div class='loader--text'></div>
+                </div>
+              </div> -->
+
+            <div class="invite">
+                <div class="bg">
+                    <h4>Game ID</h4>
+                    <p class="gid" >{{model.roomCodeToJoinAndShare }}</p>
+                    <button class="inviteBtn" ngxClipboard [cbContent]="this.code" (click)=" copyCode()">Copy Game ID</button>
+                    <button class="inviteBtn">Share Game ID</button>
+                    <button class="inviteBtn" (click)="ChoosePartner()">Choose Partner</button>
+                    <button class="inviteBtn" (click)="joinGame()" *ngIf = "this.model.playersInRoom.length>3">Start Game</button>
+                </div>
+            </div>
+           </div>
+    </div>
+</div>

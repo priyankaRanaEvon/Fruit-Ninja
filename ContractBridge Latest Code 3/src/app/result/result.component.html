@@ -1,0 +1,74 @@
+<div class="resultBlock">
+    <button class="closeBtn" (click)="cancel()">
+        <img src="/assets/img/close.png" alt="" >
+    </button>
+    <div class="innerContent">
+        <h1>Game Result</h1>
+        <table class="resultTable">
+            <tr class="head">
+                <th>Points</th>
+                <!-- <th>{{this.model.teamMemberA[0]}} & {{this.model.teamMemberA[1]}} {{this.model.youStats}}</th>
+                <th>{{this.model.teamMemberB[0]}} & {{this.model.teamMemberB[1]}} {{this.model.oppoStats}}<th> -->
+                <th>{{this.name1}} & {{this.name2}} {{this.model.youStats}}</th>
+                <th>{{this.name3}} & {{this.name4}} {{this.model.oppoStats}}</th>
+
+            </tr>
+            <tr>
+                <td>Rubber Bonus</td>
+                <td>{{this.model.yourResult.rubberBonus}}</td>
+                  
+                <td>{{this.model.opponentResult.rubberBonus}}</td>
+            </tr>
+            <tr>
+                <td>Slam Bonus</td>
+                <td>{{this.model.yourResult.slam}}</td>
+                <td>{{this.model.opponentResult.slam}}</td>
+            </tr>
+            <tr>
+                <td>Double Bonus</td>
+                <td>{{this.model.yourResult.double}}</td>
+                <td>{{this.model.opponentResult.double}}</td>
+            </tr>
+            <tr>
+                <td>ReDouble Bonus</td>
+                <td>{{this.model.yourResult.reDouble}}</td>
+                <td>{{this.model.opponentResult.reDouble}}</td>
+            </tr>
+
+            <tr>
+                <td>Honor Bonus</td>
+                <td>{{this.model.yourResult.honour}}</td>
+                <td>{{this.model.opponentResult.honour}}</td>
+            </tr>
+            <tr>
+                <td>Overtrick</td>
+                <td>{{this.model.yourResult.overTrick}}</td>
+                <td>{{this.model.opponentResult.overTrick}}</td>
+            </tr>
+            <tr>
+                <td>Undertrick</td>
+                <td>{{this.model.yourResult.underTrick}}</td>
+                <td>{{this.model.opponentResult.underTrick}}</td>
+            </tr>
+
+            <tr>
+                <td>Overtrick UnderLine</td>
+                <td>{{this.model.yourResult.overTrickUnderLine}}</td>
+                <td>{{this.model.opponentResult.overTrickUnderLine}}</td>
+            </tr>
+
+            <tr>
+                <td>Game Won</td>
+                <td>{{this.model.yourResult.gameWon}}</td>
+                <td>{{this.model.opponentResult.gameWon}}</td>
+            </tr>
+
+       
+            <tr class="total">
+                <td>Total Score:</td>
+                <td>{{this.model.yourResult.totalPoints}}</td>
+                <td>{{this.model.opponentResult.totalPoints}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

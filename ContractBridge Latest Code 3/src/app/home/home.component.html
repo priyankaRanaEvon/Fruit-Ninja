@@ -1,0 +1,22 @@
+<div class="homeScreen">
+    <div class="innerContent">
+        <div class="logo">
+            <img src="/assets/img/Logo_Contract Bridge.png" alt="">
+        </div>
+        <button class="join" (click)="JoinRandom()">Join a Random Game</button>
+        <button class="join" (click)="JoinGame()">Join a Game</button>
+        <button class="create" (click)="CreateGame()">Create a Game</button>
+    </div>
+    <div class="bottomBlock">
+        <button class="audio on">
+            <img class="i_on" src="/assets/img/Sound_on.png" alt="">
+            <img class="i_off" src="/assets/img/Sound_off.png" alt="">
+        </button>
+        <button class="questionMark">
+            <img src="/assets/img/Button_Help.png" alt="">
+        </button>
+    </div>
+</div>
+
+<app-modal *ngIf="this.model.joinPrivateGame"></app-modal>
+<app-timer-popup *ngIf="model.showTimerPopup"></app-timer-popup>

@@ -1,0 +1,16 @@
+<div class="modal">
+    <div class="modalContent">
+        <div class="modalBody">
+            <h3>Please Enter Game ID</h3>
+            <div [formGroup]="playerform">
+                <input class="inputId" type="text" formControlName="roomid">
+                </div>
+           
+            <div class="btnBlock">
+                <button class="greyBtn" (click)="cancel()">Cancel</button>
+                <button class="redBtn" (click)="joinPrivateGame()">Join Game</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modalOverlay"></div>

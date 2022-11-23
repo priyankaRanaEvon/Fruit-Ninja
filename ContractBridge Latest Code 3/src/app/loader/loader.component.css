@@ -1,0 +1,90 @@
+.modalOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.603);
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    
+
+}
+.modal .modalContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.modal .modalBody{
+    background: #ffffff;
+    padding: 5vmin 4vmin;
+    width: 28vw;
+    position: relative;
+    border-radius: 1.5ex;
+   
+}
+
+.ReconnectLoader {
+    color: #FFF;
+    display: inline-block;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    letter-spacing: 4px;
+    box-sizing: border-box;
+  
+  }
+  .ReconnectLoader::before {
+    content: '';  
+    position: absolute;
+    right: 68px;
+    bottom: 10px;
+    height: 24px;
+    width: 7px;
+    outline: 1px solid #FFF;
+    color: #FF3D00;
+    box-sizing: border-box;
+    animation: animloader1 1s linear infinite alternate;
+  }
+  .ReconnectLoader::after {
+    content: '';  
+    width: 4px;
+    height: 4px;
+    background: #FF3D00;
+    position: absolute;
+    right: 70px;
+    top: 8px;
+    box-sizing: border-box;
+    animation: animloader 1s ease-out infinite alternate;
+  }
+  
+  @keyframes animloader {
+    0% {
+      top: 8px;
+      transform: rotate(0deg) scale(1);
+    }
+    100% {
+      top: 0px;
+      transform: rotate(180deg) scale(1.5);
+    }
+  }
+  
+  @keyframes animloader1 {
+    0% {
+      box-shadow: 0 0 inset;
+    }
+    100% {
+      box-shadow: 0 -28px inset;
+    }
+  }
+

@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0%;
+    /* overflow-y:hidden; 
+
+    overflow-x:auto; */
+}
+
+/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+      /* overflow: hidden */
+}
+/*** iPhone and iOS Form Input Zoom Fixes ***/
+/* Fix Input Zoom on devices older than iPhone 5: */
+@media screen and (device-aspect-ratio: 2/3) {
+    select, textarea, input[type="text"]{ font-size: 16px; }
+}
+
+/* Fix Input Zoom on iPhone 5, 5C, 5S, iPod Touch 5g */
+@media screen and (device-aspect-ratio: 40/71) {
+    select, textarea, input[type="text"]{ font-size: 16px; }
+}
+
+/* Fix Input Zoom on iPhone 6, iPhone 6s, iPhone 7  */
+@media screen and (device-aspect-ratio: 375/667) {
+    select, textarea, input[type="text"]{ font-size: 16px; }
+}
+
+/* Fix Input Zoom on iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus, iPhone 8, iPhone X, XS, XS Max  */
+@media screen and (device-aspect-ratio: 9/16) {
+    select, textarea, input[type="text"]{ font-size: 16px; }
+
+}
+
+@font-face {
+	font-family: 'Conv_NetflixSansRegular';
+	src: url('/assets/Fonts/NetflixSansRegular.eot');
+	src: local('☺'), 
+    
+    url('./assets/Fonts/NetflixSansRegular.ttf') format('truetype'), 
+    url('/assets/Fonts/NetflixSansRegular.woff') format('woff'), 
+    url('/assets/Fonts/NetflixSansRegular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_NetflixSansMedium';
+	src: url('/assets/Fonts/NetflixSansMedium.eot');
+	src: local('☺'), 
+    url('./assets/Fonts/NetflixSansMedium.ttf') format('truetype'),
+    url('/assets/Fonts/NetflixSansMedium.woff') format('woff'), 
+    
+    url('/assets/Fonts/NetflixSansMedium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_NetflixSansBold';
+	src: url('/assets/Fonts/NetflixSansBold.eot');
+	src: local('☺'), 
+     
+    url('./assets/Fonts/NetflixSansBold.ttf') format('truetype'), 
+    url('/assets/Fonts/NetflixSansBold.woff') format('woff'),
+    url('/assets/Fonts/NetflixSansBold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+body{
+    font-family: 'Conv_NetflixSansRegular';
+}
+

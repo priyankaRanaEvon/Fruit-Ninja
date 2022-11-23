@@ -1,0 +1,31 @@
+
+<!-- <app-result></app-result> -->
+<!-- <input type="text"/> -->
+<div class="game-lobby" *ngIf="this.gameLoaded">
+    <div class="innerContent">
+        <h1>Contract Bridge</h1>
+        <p class="subTitle">
+            Please wait while game is loading...
+        </p>
+      <!-- loader final -->
+        <div class='container'>
+            <div class='loader'>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--dot'></div>
+              <div class='loader--text'></div>
+            </div>
+          </div>
+          <p class="subTitle">{{this.playersNotInGame}}</p>
+          <p class="subTitle">{{this.playersInGame}}</p>
+          <p class="subTitle">{{this.message}}</p>
+    </div>
+</div>
+<app-loader *ngIf="this.model.loader"></app-loader>
+<app-chatbox *ngIf="this.model.showChatPanel"></app-chatbox>
+<app-exit-pop-up *ngIf="this.model.showExitPopUp"></app-exit-pop-up>
+<app-result *ngIf="this.model.showResult"></app-result>
+<app-message-popup *ngIf="this.model.messagePopupVisible"></app-message-popup>

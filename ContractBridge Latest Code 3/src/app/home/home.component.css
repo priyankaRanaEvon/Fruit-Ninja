@@ -1,0 +1,76 @@
+.homeScreen{
+    background: #333333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.homeScreen .innerContent{
+    width: 37vw;
+    text-align: center;
+    /* margin-top: auto; */
+}
+.homeScreen .logo{
+    margin-bottom: 4vmin;
+    text-align: center;
+}
+.homeScreen .logo img{
+    max-width: 80%;
+}
+.homeScreen .join{
+    width: 100%;
+    background: #e50914;
+    font-size: 3.5vmin;
+    color: #ffffff;
+    padding: 2.5vmin 0;
+    text-align: center;
+    margin-bottom: 3vmin;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Conv_NetflixSansMedium';
+    font-weight: 500;
+}
+
+.homeScreen .create{
+    width: 100%;
+    background: #ffffff;
+    font-size: 3.5vmin;
+    color: #000000;
+    padding: 2.5vmin 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Conv_NetflixSansMedium';
+    font-weight: 500;
+}
+
+.homeScreen .join:hover,
+.homeScreen .create:hover{
+    color: #ffffff;
+    background: #000000;
+}
+
+.homeScreen .bottomBlock{
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 5% 4%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.homeScreen .bottomBlock button{
+    background: transparent;
+}
+.homeScreen .bottomBlock button img{
+    width: 10vmin;
+}
+.homeScreen .bottomBlock .audio.on .i_off{
+    display: none;
+}
+.homeScreen .bottomBlock .audio.off .i_on{
+    display: none;
+}

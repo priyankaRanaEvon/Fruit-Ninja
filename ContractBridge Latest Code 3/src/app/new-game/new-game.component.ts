@@ -1,0 +1,97 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ModelLocator } from '../ModelLocator/ModelLocator';
+import { SocketconnectionService } from '../services/socketconnection.service';
+
+
+
+
+@Component({
+  selector: 'app-new-game',
+  templateUrl: './new-game.component.html',
+  styleUrls: ['./new-game.component.css']
+})
+
+export class NewGameComponent implements OnInit {
+  protected subscriptions: Subscription[] = [];
+  players:any;  lobby:any = null;
+  code:any;
+
+  constructor(public router:Router, public model:ModelLocator, public socketsvc:SocketconnectionService) { 
+    this.subscribeToEvents();
+  }
+
+  ngOnInit(): void {
+  }
+
+  ChoosePartner(){
+    // this.router.navigateByUrl('choose-partner');
+
+  }
+
+
+   subscribeToEvents() {
+    
+    this.subscribeToLobbyObject();
+    this.subscribeToGameStart();
+  }
+
+  subscribeToLobbyObject() {
+    console.log("subscribetolobby")
+    let temp: Subscription;
+
+    temp = this.socketsvc.setLobbyObject.subscribe((lobby: any) => {
+      console.log("subscribetolobby",lobby)
+      this.lobby = lobby;
+      this.model.roomName = lobby.name;
+    });
+    this.subscriptions.push(temp);
+    temp = this.socketsvc.startPrivateRoom.subscribe((data) => {
+      this.lobby.send('PLAYER_JOINED', {message: 'hello'});
+    });
+    this.subscriptions.push(temp);
+  }
+
+
+  
+  close(){
+    this.lobby.leave();
+    this.model.playersInRoom = [];
+    this.model.gamePlayer = [];
+    this.router.navigateByUrl('', { skipLocationChange: false });
+  }
+
+  subscribeToGameStart() {
+    let temp: Subscription;
+    console.log("subscribetogamestart")
+    temp = this.socketsvc.leaveLobby.subscribe((data) => {
+      console.log(data,"data");
+      if(data) {
+        console.log("game start listened ", data, this.lobby);
+        this.startGameRoom();
+      }
+    });
+    this.subscriptions.push(temp);
+
+  }
+
+  startGameRoom() {
+    for (let subs of this.subscriptions) {
+      subs.unsubscribe();
+    }
+    this.subscriptions = [];
+    // this.model.playersInRoom = [];
+    this.router.navigateByUrl('/game', { skipLocationChange: false });
+  }
+
+ joinGame(){
+  // this.lobby.send("START_GAME");
+ }
+
+ copyCode(){
+  this.code = this.model.roomCodeToJoinAndShare;
+ }
+
+
+}
